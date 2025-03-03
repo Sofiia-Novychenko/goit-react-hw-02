@@ -2,6 +2,7 @@ import styles from './Feedback.module.css';
 export default function Feedback({
   feedback: { good, neutral, bad },
   totalFeedback,
+  PositiveFeedback,
 }) {
   return (
     <div className={styles.container}>
@@ -10,7 +11,7 @@ export default function Feedback({
       <p className={`${styles.text} && ${styles.bad}`}>Bad:{bad}</p>
       <p className={styles.text}>Total:{totalFeedback}</p>
       <p className={`${styles.text} && ${styles.positive}`}>
-        Positive:{Math.round(((good + neutral) / totalFeedback) * 100)}%
+        Positive:{PositiveFeedback}%
       </p>
     </div>
   );
